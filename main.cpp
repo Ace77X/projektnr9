@@ -3,39 +3,50 @@
 
 using namespace std;
 
-class Punkt {
-	
-	public:
-	int x;
-	int y;
-	Punkt(){
-		x=0;
-		y=0;
-	}
-	
-	Punkt(int x0, int y0) : x(x0), y(y0){}
-	
-};
-
-
 int main(){
-	Punkt p1(5,2);
-	Punkt p2(3,1);
-		
-	cout << p1.x << " " << p1.y << endl;
-	cout << p2.x << " " << p2.y << endl;
+
+	int n=5;
+	
+	//cout << "Wpisz ilosc punktow: " << endl;
+	//cin >> n;
+
+	int tabx[n] = {0,1,-2,-1,10};
+	int taby[n] = {0,2,-3,-10,9};
+	
+
 	
 	double odleglosc=0;
 	//double odlegloscsq=0;
-	odleglosc = sqrt((p1.x-p2.x)^2 + (p1.y - p2.y)^2);	
-	//odlegloscsq = (p1.x-p2.x)^2 + (p1.y - p2.y)^2;
-	if (odleglosc < 0 ) {
+	double minodleglosc=10000;
+	int index[2]={-1,-1};
+	
+	for (int i = 0; i<n;i++){
+		for (int j = 1; j<n; j++){			
+			if (j!=i){
+			odleglosc = sqrt(pow(tabx[i] - tabx[j],2) + pow(taby[i] - taby[j],2));
+			
+			if (odleglosc < minodleglosc) {
+				minodleglosc = odleglosc;
+				index[0]=i;
+				index[1]=j;
+			}
+		}
+		}
+	}
+
+	if (minodleglosc < 0) {
 		cout << "Blad w obliczeniach, odleglosc jest mniejsza niz 0." << endl;
-	} else if (odleglosc == 0 ){
+	} else if (minodleglosc == 0){
 		cout << "Odleglosc miedzy tymi samymi punktami jest rowna 0" << endl;
 	} else {
-		cout << odleglosc << endl;
+		cout << minodleglosc << endl;
+		cout << "Pomiedzy punktem " << index[0]+1 << " oraz punktem " << index[1]+1<< endl;
 	}
+	
+	//cout << tabx[0] << " " << tabx[1] << " ";
+	//odleglosc = sqrt(pow(tabx[0] - tabx[1],2) + pow(taby[0] - taby[1],2));
+	//odlegloscsq = pow(tabx[0] - tabx[1],2) + pow(taby[0] - taby[1],2);
+	//cout << odlegloscsq;
 	
 	return 0;
 }
