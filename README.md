@@ -6,6 +6,10 @@ Jakub Maternia gr P05
 
 # Update log
 
+* 0.4
+    * Optymalizacja obliczeń odległości (usunięcie pierwiastka, który nie wpływa na wynik)
+    * Dynamiczna alokacja pamięci dla tablice
+    * Pomiar czasu wykonywania funkcji używając biblioteki chrono
 * 0.3
     * Zapisywanie indeksów najbliższych sąsiadów do tablicy index
     * Losowanie wartości współrzędnych punktów
