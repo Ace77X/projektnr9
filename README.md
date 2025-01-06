@@ -6,6 +6,8 @@ Jakub Maternia gr P05
 
 # Update log
 
+* 0.5
+    * Bug fix (brak delete [])
 * 0.4
     * Optymalizacja obliczeń odległości (usunięcie pierwiastka, który nie wpływa na wynik)
     * Dynamiczna alokacja pamięci dla tablice

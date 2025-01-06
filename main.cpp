@@ -12,25 +12,25 @@ void szukanie(int n, int* tabx, int* taby){
 	for (int i =0; i<n;i++){
 		index[i]=-1;
 	}	
-		for (int i = 0; i<n;i++){
-			double minodleglosc=10000;
-			int in=-1;
-			for (int j = 0; j<n; j++){			
-				if (j!=i){
-				odleglosc = (tabx[i] - tabx[j]) * (tabx[i] - tabx[j]) + (taby[i] - taby[j]) * (taby[i] - taby[j]);
-				if (odleglosc < minodleglosc) {
-					minodleglosc = odleglosc;
-					in=j;				
-					}
+	for (int i = 0; i<n;i++){
+		double minodleglosc=10000;
+		int in=-1;
+		for (int j = 0; j<n; j++){
+			if (j!=i){
+			odleglosc = (tabx[i] - tabx[j]) * (tabx[i] - tabx[j]) + (taby[i] - taby[j]) * (taby[i] - taby[j]);
+			if (odleglosc < minodleglosc) {
+				minodleglosc = odleglosc;
+				in=j;				
 				}
 			}
+		}
 		index[i]=in;		
 	}
 
 	for (int i=0; i<n;i++){
 		cout << index[i] << " ";
 	}
-
+	delete index;
 }
 
 int main(){
@@ -67,6 +67,9 @@ int main(){
 	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
 	
 	cout << endl << "czas: " << time_span.count() << endl;
+	
+	delete tabx;
+	delete taby;
 	
 	return 0;
 }
