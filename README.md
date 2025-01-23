@@ -5,7 +5,14 @@
 Jakub Maternia gr P05
 
 # Update log
-
+* 1.1
+    * Readme
+* 1.0
+    * Druga metoda na rozwiązanie problemu poprzez wykorzystanie paradygmatu dziel i zwyciężaj
+    * Obsługa danych z pliku dla obu programów
+    * Funkcje testy, w których dokonywane są testy poprawności działania programu
+    * Sprawozdanie
+    * Dalsza optymalizacja
 * 0.5
     * Bug fix (brak delete [])
 * 0.4
